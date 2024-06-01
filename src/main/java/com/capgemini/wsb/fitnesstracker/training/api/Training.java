@@ -6,12 +6,19 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Date;
+
+/**
+ * Entity representing a training session in the fitness tracker.
+ */
+
 @Entity
 @Table(name = "trainings")
 @Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 public class Training {
@@ -41,12 +48,13 @@ public class Training {
     private double averageSpeed;
 
     public Training(
-            final User user,
-            final Date startTime,
-            final Date endTime,
-            final ActivityType activityType,
-            final double distance,
-            final double averageSpeed) {
+        final User user,
+        final Date startTime,
+        final Date endTime,
+        final ActivityType activityType,
+        final double distance,
+        final double averageSpeed
+    ) {
         this.user = user;
         this.startTime = startTime;
         this.endTime = endTime;
